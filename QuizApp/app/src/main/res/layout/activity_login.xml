@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="liselimanyak.quizapp.Login">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/holo_orange_light"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Welcome to my Quiz App"
+            android:textAllCaps="true"
+            android:textStyle="bold"
+            android:layout_marginTop="100dp"
+            android:textSize="25dp"
+            android:layout_marginLeft="25dp"/>
+
+        <Button
+         android:layout_width="150dp"
+         android:layout_height="100dp"
+         android:layout_marginTop="40dp"
+         android:layout_marginLeft="110dp"
+         android:text="Start"
+            android:id="@+id/start"
+            android:background="@android:color/holo_orange_dark"
+         android:textAllCaps="true"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="110dp"
+            android:layout_marginTop="50dp"
+            android:text="For any questions mail me:"
+            android:textStyle="bold"/>
+
+        <ImageButton
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:id="@+id/icon_button"
+            android:layout_marginLeft="160dp"
+            android:layout_marginTop="40dp"
+            android:src="@drawable/ma" />
+
+    </LinearLayout>
+
+
+</android.support.constraint.ConstraintLayout>

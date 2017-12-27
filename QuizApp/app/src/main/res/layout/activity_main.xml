@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="liselimanyak.quizapp.MainActivity"
+    android:orientation="vertical"
+    android:background="@android:color/holo_orange_light">
+
+    <RelativeLayout
+        android:background="@android:color/holo_green_light"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="48dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Score :"
+            android:layout_marginTop="2dp"
+            android:textSize="20sp"
+            android:layout_marginLeft="16dp"
+            android:layout_alignParentLeft="true"
+            android:id="@+id/score_text"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/score"
+            android:layout_alignParentRight="true"
+            android:text="0"
+            android:layout_marginTop="2dp"
+            android:layout_marginRight="16dp"
+            android:textSize="20sp"/>
+
+    </RelativeLayout>
+    
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:text="Which thing is alive ?"
+        android:textSize="20sp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:padding="8dp"
+        android:textStyle="bold"
+        android:textAllCaps="true"
+        android:layout_marginBottom="40dp"
+        android:id="@+id/question"/>
+    
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Bird"
+        android:padding="8dp"
+        android:layout_marginBottom="24dp"
+        android:id="@+id/choice1"
+        android:layout_marginRight="16dp"
+        android:layout_marginLeft="16dp"
+        android:background="@android:color/holo_red_light"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Paper"
+        android:padding="8dp"
+        android:layout_marginBottom="24dp"
+        android:id="@+id/choice2"
+        android:layout_marginRight="16dp"
+        android:layout_marginLeft="16dp"
+        android:background="@android:color/holo_red_light"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Rock"
+        android:padding="8dp"
+        android:background="@android:color/holo_red_light"
+        android:layout_marginBottom="24dp"
+        android:id="@+id/choice3"
+        android:layout_marginRight="16dp"
+        android:layout_marginLeft="16dp"/>
+
+    
+</LinearLayout>
