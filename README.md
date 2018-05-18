@@ -1,4 +1,4 @@
-# Projet
+# Project
 
 First of all there is an opening screen with a drawer.In drawer nothing is functional cuz I wanted to finish quickly as possible and there was nothing hard to implement so I've skipped.If you want I cant make it functional of course.And maybe a login screen too.
 
