@@ -17,6 +17,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.CursorAdapter;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -26,12 +27,12 @@ public class EditorActivity extends AppCompatActivity implements
         LoaderManager.LoaderCallbacks<Cursor> {
 
     /**
-     * Identifier for the pet data loader
+     * Identifier for the item data loader
      */
     private static final int EXISTING_ITEM_LOADER = 0;
 
     /**
-     * Content URI for the existing pet (null if it's a new pet)
+     * Content URI for the existing item (null if it's a new pet)
      */
     private Uri mCurrentItemUri;
 
@@ -112,10 +113,10 @@ public class EditorActivity extends AppCompatActivity implements
         String nameString = mNameEditText.getText().toString().trim();
         String suplierString = mSuplierEditText.getText().toString().trim();
         String priceString = mPriceEditText.getText().toString().trim();
-
+        String quantityString = mQuantityEditText.getText().toString().trim();
         if (mCurrentItemUri == null &&
                 TextUtils.isEmpty(nameString) && TextUtils.isEmpty(suplierString) &&
-                TextUtils.isEmpty(priceString)) {
+                TextUtils.isEmpty(priceString) && TextUtils.isEmpty(quantityString)) {
             return;
         }
 
@@ -127,6 +128,12 @@ public class EditorActivity extends AppCompatActivity implements
         if (!TextUtils.isEmpty(priceString)) {
             price = Integer.parseInt(priceString);
         }
+
+        int quantity = 0;
+        if(!TextUtils.isEmpty(quantityString)){
+            quantity = Integer.parseInt(quantityString);
+        }
+        values.put(ItemEntry.COLUMN_QUANTITIY, quantity);
         values.put(ItemEntry.COLUMN_PRICE, price);
 
         if (mCurrentItemUri == null) {
@@ -260,16 +267,19 @@ public class EditorActivity extends AppCompatActivity implements
             int nameColumnIndex = cursor.getColumnIndex(ItemEntry.COLUMN_ITEM_NAME);
             int suplierColumnIndex = cursor.getColumnIndex(ItemEntry.COLUMN_SUPLIER_NAME);
             int priceColumnIndex = cursor.getColumnIndex(ItemEntry.COLUMN_PRICE);
+            int quantityColumnIndex = cursor.getColumnIndex(ItemEntry.COLUMN_QUANTITIY);
 
             // Extract out the value from the Cursor for the given column index
             String name = cursor.getString(nameColumnIndex);
             String suplier = cursor.getString(suplierColumnIndex);
             int price = cursor.getInt(priceColumnIndex);
+            int quantity = cursor.getInt(quantityColumnIndex);
 
             // Update the views on the screen with the values from the database
             mNameEditText.setText(name);
             mSuplierEditText.setText(suplier);
             mPriceEditText.setText(Integer.toString(price));
+            mQuantityEditText.setText(Integer.toString(quantity));
 
         }
     }
