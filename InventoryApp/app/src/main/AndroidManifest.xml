@@ -25,6 +25,10 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".CatalogActivity" />
         </activity>
+        <provider
+            android:name=".data.ItemProvider"
+            android:authorities="com.example.aylin.inventoryapp"
+            android:exported="false" />
     </application>
 
 </manifest>
