@@ -1,7 +1,8 @@
 <resources>
     <string name="app_name">InventoryApp</string>
 
-    <string name="unknown_suplier">Unknown suplier</string>
+    <string name="unknown_suplier">Unknown price</string>
+    <string name="unknown_quantity">Unknown quantity</string>
     <string name="editor_activity_title_new_item">Add an Item</string>
     <string name="editor_activity_title_edit_item">Edit Item</string>
     <string name="editor_insert_item_successful">Item saved</string>

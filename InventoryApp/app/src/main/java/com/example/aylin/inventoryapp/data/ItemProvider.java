@@ -90,6 +90,12 @@ public class ItemProvider extends ContentProvider {
         if (price != null && price < 0) {
             throw new IllegalArgumentException("Pet requires valid price");
         }
+
+        Integer quantity = values.getAsInteger(ItemEntry.COLUMN_QUANTITIY);
+        if (quantity != null && quantity < 0) {
+            throw new IllegalArgumentException("The quantity must be 0 or above");
+        }
+
         SQLiteDatabase database = mDbHelper.getWritableDatabase();
 
         long id = database.insert(ItemEntry.TABLE_NAME, null, values);

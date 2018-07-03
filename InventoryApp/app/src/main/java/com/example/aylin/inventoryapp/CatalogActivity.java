@@ -54,8 +54,8 @@ public class CatalogActivity extends AppCompatActivity implements
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
                 Intent intent = new Intent(CatalogActivity.this, EditorActivity.class);
-                Uri currentPetUri = ContentUris.withAppendedId(ItemEntry.CONTENT_URI, id);
-                intent.setData(currentPetUri);
+                Uri currentItemUri = ContentUris.withAppendedId(ItemEntry.CONTENT_URI, id);
+                intent.setData(currentItemUri);
 
                 startActivity(intent);
             }
@@ -111,7 +111,8 @@ public class CatalogActivity extends AppCompatActivity implements
         String[] projection = {
                 ItemEntry._ID,
                 ItemEntry.COLUMN_ITEM_NAME,
-                ItemEntry.COLUMN_SUPLIER_NAME};
+                ItemEntry.COLUMN_PRICE,
+                ItemEntry.COLUMN_QUANTITIY};
 
         // This loader will execute the ContentProvider's query method on a background thread
         return new CursorLoader(this,   // Parent activity context

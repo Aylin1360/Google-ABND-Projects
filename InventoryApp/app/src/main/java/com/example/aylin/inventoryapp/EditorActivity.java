@@ -17,8 +17,9 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
-import android.widget.CursorAdapter;
+import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import com.example.aylin.inventoryapp.data.ItemContract.ItemEntry;
@@ -60,6 +61,7 @@ public class EditorActivity extends AppCompatActivity implements
      * EditText field to enter the items' quantity
      */
     private EditText mQuantityEditText;
+    private int gQuantity;
 
     private boolean mItemHasChanged = false;
 
@@ -80,61 +82,133 @@ public class EditorActivity extends AppCompatActivity implements
         mCurrentItemUri = intent.getData();
 
         if (mCurrentItemUri == null) {
-            // This is a new pet, so change the app bar to say "Add a Pet"
             setTitle(getString(R.string.editor_activity_title_new_item));
-
-            // Invalidate the options menu, so the "Delete" menu option can be hidden.
-            // (It doesn't make sense to delete a pet that hasn't been created yet.)
             invalidateOptionsMenu();
         } else {
-            // Otherwise this is an existing pet, so change app bar to say "Edit Pet"
             setTitle(getString(R.string.editor_activity_title_edit_item));
-
-            // Initialize a loader to read the pet data from the database
-            // and display the current values in the editor
             getLoaderManager().initLoader(EXISTING_ITEM_LOADER, null, this);
         }
 
-        // Find all relevant views that we will need to read user input from
         mNameEditText = (EditText) findViewById(R.id.edit_item_name);
         mSuplierEditText = (EditText) findViewById(R.id.suplier_name);
         mSuplierPhoneEditText = (EditText) findViewById(R.id.suplier_phone);
         mPriceEditText = (EditText) findViewById(R.id.edit_price);
         mQuantityEditText = (EditText) findViewById(R.id.edit_quantity);
 
+        ImageButton Increase_Button = (ImageButton) findViewById(R.id.quantity_increase);
+        ImageButton Decrease_Button = (ImageButton) findViewById(R.id.quantity_decrease);
+
+        Increase_Button.setOnTouchListener(mTouchListener);
+        Decrease_Button.setOnTouchListener(mTouchListener);
         mNameEditText.setOnTouchListener(mTouchListener);
         mSuplierEditText.setOnTouchListener(mTouchListener);
         mSuplierPhoneEditText.setOnTouchListener(mTouchListener);
         mPriceEditText.setOnTouchListener(mTouchListener);
         mQuantityEditText.setOnTouchListener(mTouchListener);
+
+        Increase_Button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                String quantity = mQuantityEditText.getText().toString();
+                if (TextUtils.isEmpty(quantity)) {
+                    Toast.makeText(EditorActivity.this, "Quantity field cant be empty", Toast.LENGTH_SHORT).show();
+                    return;
+                } else {
+                    gQuantity = Integer.parseInt(quantity);
+                    mQuantityEditText.setText(String.valueOf(gQuantity + 1));
+                }
+            }
+        });
+
+        Decrease_Button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String quantity = mQuantityEditText.getText().toString();
+                if (TextUtils.isEmpty(quantity)) {
+                    Toast.makeText(EditorActivity.this, "Quantity field cant be empty", Toast.LENGTH_SHORT).show();
+                    return;
+                } else {
+                    gQuantity = Integer.parseInt(quantity);
+                    // to validate if quantity is greater than =
+                    if ((gQuantity - 1) >= 0) {
+                        mQuantityEditText.setText(String.valueOf(gQuantity - 1));
+                    } else {
+                        Toast.makeText(EditorActivity.this, "Quantitiy can't be smaller than 0", Toast.LENGTH_SHORT).show();
+                    }
+                }
+            }
+        });
+
+        final Button mPhoneCallSupplierButton = (Button) findViewById(R.id.call_button);
+
+        mPhoneCallSupplierButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String phoneNumber = mSuplierPhoneEditText.getText().toString().trim();
+                Intent intent = new Intent(Intent.ACTION_DIAL);
+                intent.setData(Uri.parse("tel:" + phoneNumber));
+                if (intent.resolveActivity(getPackageManager()) != null) {
+                    startActivity(intent);
+
+                }
+            }
+
+        });
     }
 
     private void saveItem() {
+
         String nameString = mNameEditText.getText().toString().trim();
         String suplierString = mSuplierEditText.getText().toString().trim();
         String priceString = mPriceEditText.getText().toString().trim();
         String quantityString = mQuantityEditText.getText().toString().trim();
+        String supplierPhoneNumberString = mSuplierPhoneEditText.getText().toString().trim();
+
         if (mCurrentItemUri == null &&
                 TextUtils.isEmpty(nameString) && TextUtils.isEmpty(suplierString) &&
-                TextUtils.isEmpty(priceString) && TextUtils.isEmpty(quantityString)) {
+                TextUtils.isEmpty(priceString) && TextUtils.isEmpty(quantityString) && TextUtils.isEmpty(supplierPhoneNumberString)) {
+            Toast.makeText(this, "Please fill the blanks", Toast.LENGTH_SHORT).show();
             return;
         }
 
         ContentValues values = new ContentValues();
+
+        if (TextUtils.isEmpty(priceString)) {
+            mPriceEditText.setError("Enter the price");
+            Toast.makeText(this, "Please fill the price", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        if (TextUtils.isEmpty(quantityString)) {
+            mQuantityEditText.setError("Please fill the quantitiy");
+            Toast.makeText(this, "Please fill the quantity", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+
+        if (TextUtils.isEmpty(nameString)) {
+            mNameEditText.setError("Enter the items' name");
+            Toast.makeText(this, "Please fill the name", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        if (TextUtils.isEmpty(suplierString)) {
+            mSuplierEditText.setError("Enter supliers' name");
+            Toast.makeText(this, "Please fill the suplier name", Toast.LENGTH_SHORT).show();
+            return;
+        }
+        if (TextUtils.isEmpty(supplierPhoneNumberString)) {
+            mSuplierPhoneEditText.setError("Enter the supliers number");
+            Toast.makeText(this, "Please fill the suplier phone", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
         values.put(ItemEntry.COLUMN_ITEM_NAME, nameString);
         values.put(ItemEntry.COLUMN_SUPLIER_NAME, suplierString);
-
-        int price = 0;
-        if (!TextUtils.isEmpty(priceString)) {
-            price = Integer.parseInt(priceString);
-        }
-
-        int quantity = 0;
-        if(!TextUtils.isEmpty(quantityString)){
-            quantity = Integer.parseInt(quantityString);
-        }
-        values.put(ItemEntry.COLUMN_QUANTITIY, quantity);
-        values.put(ItemEntry.COLUMN_PRICE, price);
+        values.put(ItemEntry.COLUMN_SUPLIER_PHONE, supplierPhoneNumberString);
+        values.put(ItemEntry.COLUMN_QUANTITIY, quantityString);
+        values.put(ItemEntry.COLUMN_PRICE, priceString);
 
         if (mCurrentItemUri == null) {
 
@@ -147,6 +221,9 @@ public class EditorActivity extends AppCompatActivity implements
                 Toast.makeText(this, getString(R.string.editor_insert_item_successful),
                         Toast.LENGTH_SHORT).show();
             }
+
+            finish();
+
         } else {
 
             int rowsAffected = getContentResolver().update(mCurrentItemUri, values, null, null);
@@ -158,6 +235,8 @@ public class EditorActivity extends AppCompatActivity implements
                 Toast.makeText(this, getString(R.string.editor_update_item_successful),
                         Toast.LENGTH_SHORT).show();
             }
+
+            finish();
         }
     }
 
@@ -187,7 +266,6 @@ public class EditorActivity extends AppCompatActivity implements
             // Respond to a click on the "Save" menu option
             case R.id.action_save:
                 saveItem();
-                finish();
                 return true;
             // Respond to a click on the "Delete" menu option
             case R.id.action_delete:
@@ -268,19 +346,21 @@ public class EditorActivity extends AppCompatActivity implements
             int suplierColumnIndex = cursor.getColumnIndex(ItemEntry.COLUMN_SUPLIER_NAME);
             int priceColumnIndex = cursor.getColumnIndex(ItemEntry.COLUMN_PRICE);
             int quantityColumnIndex = cursor.getColumnIndex(ItemEntry.COLUMN_QUANTITIY);
+            int suplierPhoneIndex = cursor.getColumnIndex(ItemEntry.COLUMN_SUPLIER_PHONE);
 
             // Extract out the value from the Cursor for the given column index
             String name = cursor.getString(nameColumnIndex);
             String suplier = cursor.getString(suplierColumnIndex);
             int price = cursor.getInt(priceColumnIndex);
             int quantity = cursor.getInt(quantityColumnIndex);
+            long suplierPhoneNumber = cursor.getInt(suplierPhoneIndex);
 
             // Update the views on the screen with the values from the database
             mNameEditText.setText(name);
             mSuplierEditText.setText(suplier);
             mPriceEditText.setText(Integer.toString(price));
             mQuantityEditText.setText(Integer.toString(quantity));
-
+            mSuplierPhoneEditText.setText(Long.toString(suplierPhoneNumber));
         }
     }
 
@@ -290,6 +370,8 @@ public class EditorActivity extends AppCompatActivity implements
         mNameEditText.setText("");
         mSuplierEditText.setText("");
         mPriceEditText.setText("");
+        mQuantityEditText.setText("");
+        mSuplierPhoneEditText.setText("");
     }
 
     private void showUnsavedChangesDialog(
