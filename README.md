@@ -6,9 +6,9 @@ It's an app for searching in arrayList.
 
 If you clone or download this project, you will get you a copy of the project up and running on your local machine for development and testing purposes. You advice for test machines  :
 
-*Genymotion<br/>
-*Android Emilator<br/> 
-*Or a real phone<br/> 
+*Genymotion\
+*Android Emilator\
+*Or a real phone\
 
 ## Content
 
@@ -22,11 +22,11 @@ If you want to challange yourself, I'm encouraging you to use a database like Fi
 
 ## Build With
 
-*Android Studio <br/>  
+*Android Studio\ 
 *Java 8   
 
 ## Author
 
-Aylin Görgün <br/>  
+Aylin Görgün\ 
     Linkedin: [Aylin](https://www.linkedin.com/in/aylin-g%C3%B6rg%C3%BCn-a60b6115b/)  <br/>
     Gmail: aylingrgn2@gmail.com
