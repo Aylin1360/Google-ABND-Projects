@@ -11,8 +11,8 @@ Download or clone this project, choose your device and run it.
 
 ## Acknowledgments
 
-*Positioning and designing layouts.
-*Auto-directed mail navigation.
-*Toast messages.
-*Score keeping
-*Arrays
+*Positioning and designing layouts. <br />
+*Auto-directed mail navigation. <br />
+*Toast messages. <br />
+*Score keeping <br />
+*Arrays <br />
