@@ -26,10 +26,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
-        mScoreView = (TextView)findViewById(R.id.score);
-        mQuestionView =(TextView)findViewById(R.id.question);
-        mButtonChoice1 = (Button)findViewById(R.id.choice1);
+        mScoreView = (TextView) findViewById(R.id.score);
+        mQuestionView = (TextView) findViewById(R.id.question);
+        mButtonChoice1 = (Button) findViewById(R.id.choice1);
         mButtonChoice2 = (Button) findViewById(R.id.choice2);
         mButtonChoice3 = (Button) findViewById(R.id.choice3);
 
@@ -39,13 +38,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                if(mButtonChoice1.getText() == mAnswer){
-                    mScore = mScore + 1 ;
+                if (mButtonChoice1.getText() == mAnswer && mScore < 7) {
+                    mScore++;
                     updateScore(mScore);
                     updateQuestion();
 
                     Toast.makeText(MainActivity.this, "CORRECT", Toast.LENGTH_SHORT).show();
-                }else{
+                } else {
                     Toast.makeText(MainActivity.this, "WRONG", Toast.LENGTH_SHORT).show();
                     updateQuestion();
                 }
@@ -57,13 +56,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                if(mButtonChoice2.getText() == mAnswer){
-                    mScore = mScore + 1 ;
+                if (mButtonChoice2.getText() == mAnswer && mScore < 7) {
+                    mScore++;
                     updateScore(mScore);
                     updateQuestion();
 
                     Toast.makeText(MainActivity.this, "CORRECT", Toast.LENGTH_SHORT).show();
-                }else{
+                } else {
                     Toast.makeText(MainActivity.this, "WRONG", Toast.LENGTH_SHORT).show();
                     updateQuestion();
                 }
@@ -75,13 +74,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                if(mButtonChoice3.getText() == mAnswer){
-                    mScore = mScore + 1 ;
+                if (mButtonChoice3.getText() == mAnswer && mScore < 7) {
+                    mScore++;
+
                     updateScore(mScore);
                     updateQuestion();
 
                     Toast.makeText(MainActivity.this, "CORRECT", Toast.LENGTH_SHORT).show();
-                }else{
+                } else {
                     Toast.makeText(MainActivity.this, "WRONG", Toast.LENGTH_SHORT).show();
                     updateQuestion();
                 }
@@ -90,9 +90,9 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    private void updateQuestion(){
+    private void updateQuestion() {
 
-        if(mQuestionNumber  < mQuestionLibrary.getLength()) {
+        if (mQuestionNumber < mQuestionLibrary.getLength()) {
             mQuestionView.setText(mQuestionLibrary.getQuestions(mQuestionNumber));
             mButtonChoice1.setText(mQuestionLibrary.getChoice1(mQuestionNumber));
             mButtonChoice2.setText(mQuestionLibrary.getChoice2(mQuestionNumber));
@@ -101,12 +101,12 @@ public class MainActivity extends AppCompatActivity {
             mAnswer = mQuestionLibrary.getCorrectAnswer(mQuestionNumber);
             mQuestionNumber++;
 
-        }else{
+        } else {
             Toast.makeText(MainActivity.this, "Test is Over", Toast.LENGTH_SHORT).show();
         }
     }
 
-    private void updateScore(int Score){
+    private void updateScore(int Score) {
         mScoreView.setText("" + mScore);
     }
 }
