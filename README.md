@@ -1,7 +1,32 @@
-# Project
+# Searching In an ArrayList
 
-First of all there is an opening screen with a drawer.In drawer nothing is functional cuz I wanted to finish quickly as possible and there was nothing hard to implement so I've skipped it.If you want I can make it functional of course.And maybe a login screen too.
+It's an app for searching in arrayList.
 
-After opening screen there is an ArrayList and objects as arraylist's elements.An actor,ratings and it's picture.Also I've used an adapter due to not overuse the memory like Twitter does.It loads only what you can see.After that there is an edit text field and search button. (Let's say user give 'Amy' as input to search bar and click the search button. There are 3 people which their first names are 'Amy' in the popular actors dataset and these people are Amy Adams, Amy Jackson and Amy Schumer. In the result of this search, '3' should be shown.)As far as understandfrom example we don't need to show all three names ve just need count of it cuz variable type is integer.
+## Getting Started
 
-I've tried to implement everything and if you think I've missed something or made something wrong please warn me.I'll be waiting to hear from you.Thanks. 
+If you clone or download this project, you will get you a copy of the project up and running on your local machine for development and testing purposes. You advice for test machines  :
+
+*Genymotion 
+*Android Emilator
+*Or a real phone
+
+## Content
+
+First of all there is an opening screen with a drawer.In drawer nothing is functional.If you want you can add navigation to another pages.Also you can implement user login and logout.
+
+After opening screen there is an ArrayList and objects as arraylist's elements.An actor,ratings and Their pictures.
+
+Also I've used an adapter due to not overuse the memory like Twitter does.It loads only what you can see.After that there is an edit text field and search button. (Let's say user give 'Amy' as input to search bar and click the search button. There are 3 people which their first names are 'Amy' in the popular actors dataset and these people are Amy Adams, Amy Jackson and Amy Schumer. In the result of this search, '3' should be shown.)
+
+If you want to challange yourself, I'm encouraging you to use a database like Firebase and do searching in here.
+
+## Build With
+
+*Android Studio
+*Java 8
+
+## Author
+
+Aylin Görgün 
+    Linkedin: [Aylin](https://www.linkedin.com/in/aylin-g%C3%B6rg%C3%BCn-a60b6115b/)
+    Gmail: aylingrgn2@gmail.com
