@@ -16,8 +16,7 @@ import android.widget.Toast;
  */
 public class MainActivity extends AppCompatActivity {
 
-    int quantity = 2 ;
-
+    int quantity = 2;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,26 +39,28 @@ public class MainActivity extends AppCompatActivity {
      * This method is called when the order button is clicked.
      */
 
-    public void increament (View view) {
+    public void increament(View view) {
 
-        if(quantity == 0 ) {
+        if (quantity == 0) {
             Toast.makeText(this, "Invalid number of coffee", Toast.LENGTH_SHORT).show();
             return;
-        }else {
+        } else {
             quantity = quantity - 1;
             display(quantity);
         }
     }
+
     //increament ve dicreamentı ters yazdın unutma
     public void decrement(View view) {
-        if(quantity == 100) {
+        if (quantity == 100) {
             Toast.makeText(this, "Invalid number of coffee", Toast.LENGTH_SHORT).show();
             return;
-        }else {
+        } else {
             quantity = quantity + 1;
             display(quantity);
         }
     }
+
     /**
      * This method is called when the order button is clicked.
      */
@@ -74,7 +75,7 @@ public class MainActivity extends AppCompatActivity {
         CheckBox choclateBox = (CheckBox) findViewById(R.id.chocolate_checkbox);
         boolean hasChoclate = choclateBox.isChecked();
 
-        int price = calculatePrice(haswhippedCream , hasChoclate);
+        int price = calculatePrice(haswhippedCream, hasChoclate);
         String priceMessage = createOrderSummary(name, price, haswhippedCream, hasChoclate);
 
         Intent intent = new Intent(Intent.ACTION_SENDTO);
@@ -91,40 +92,40 @@ public class MainActivity extends AppCompatActivity {
     private int calculatePrice(boolean addWhippedCream, boolean addChoclate) {
         int basePrice = 5;
 
-        if(addWhippedCream){
+        if (addWhippedCream) {
             basePrice = basePrice + 1;
         }
-        if(addChoclate){
+        if (addChoclate) {
             basePrice = basePrice + 2;
         }
         return quantity * basePrice;
     }
 
-    private String createOrderSummary(String name, int price, boolean whippedCream, boolean choclate){
+    private String createOrderSummary(String name, int price, boolean whippedCream, boolean choclate) {
 
-        if(whippedCream == true){
-
-            return getString(R.string.order_summary_name) + name +
-                    "\n" + getString(R.string.Add_whipped_cream) +
-                    "\n" + getString(R.string.Quantityy) + quantity  +
-                    "\n" + getString(R.string.Total) +
-                    price + "\n" + getString(R.string.thank_you) ;
-        }else if(choclate == true){
-
-            return getString(R.string.order_summary_name) + name +
-                    "\n" + getString(R.string.Add_choclate) +
-                    "\n" + getString(R.string.Quantityy) + quantity  +
-                    "\n" + getString(R.string.Total) +
-                    price + "\n" + getString(R.string.thank_you) ;
-        }else if(choclate == true && whippedCream == true ){
+        if (whippedCream == true) {
 
             return getString(R.string.order_summary_name) + name +
                     "\n" + getString(R.string.Add_whipped_cream) +
-                    "\n" + getString(R.string.Add_choclate) +
-                    "\n" + getString(R.string.Quantityy) + quantity  +
+                    "\n" + getString(R.string.Quantityy) + quantity +
                     "\n" + getString(R.string.Total) +
-                    price + "\n" + getString(R.string.thank_you) ;
-        }else {
+                    price + "\n" + getString(R.string.thank_you);
+        } else if (choclate == true) {
+
+            return getString(R.string.order_summary_name) + name +
+                    "\n" + getString(R.string.Add_choclate) +
+                    "\n" + getString(R.string.Quantityy) + quantity +
+                    "\n" + getString(R.string.Total) +
+                    price + "\n" + getString(R.string.thank_you);
+        } else if (choclate == true && whippedCream == true) {
+
+            return getString(R.string.order_summary_name) + name +
+                    "\n" + getString(R.string.Add_whipped_cream) +
+                    "\n" + getString(R.string.Add_choclate) +
+                    "\n" + getString(R.string.Quantityy) + quantity +
+                    "\n" + getString(R.string.Total) +
+                    price + "\n" + getString(R.string.thank_you);
+        } else {
 
             return getString(R.string.order_summary_name) + name +
                     "\n" + getString(R.string.Quantityy) + quantity +
