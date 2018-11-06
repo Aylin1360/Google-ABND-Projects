@@ -14,10 +14,10 @@ Download or Clone this file, choose your device and run it.
 
 *It's single-page application so it's a great egzersize for begginner coders.
 
-*Positioning and desigining layouts.
-*Increament and decreament methods.
-*Check Box practice
-*Navigation to Google Maps
-*Order summary
-*Auto-directing your summary to gmail.
-*Multiple intent used.
+*Positioning and desigining layouts. <br />
+*Increament and decreament methods. <br />
+*Check Box practice <br />
+*Navigation to Google Maps <br />
+*Order summary <br />
+*Auto-directing your summary to gmail. <br />
+*Multiple intent used. <br />
