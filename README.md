@@ -20,10 +20,6 @@ Also I've used an adapter due to not overuse the memory like Twitter does.It loa
 
 If you want to challange yourself, I'm encouraging you to use a database like Firebase and do searching in here. <br/>
 
-![Screenshot] (D:\Projects\ActorsApp\Screenshot1.png)
-![Screenshot] (D:\Projects\ActorsApp\Screenshot2.png)
-![Screenshot] (D:\Projects\ActorsApp\Screenshot3.png)
-
 ## Build With
 
 *Android Studio <br/>  
