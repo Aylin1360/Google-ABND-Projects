@@ -17,15 +17,15 @@ Design includes all specified business criteria <br />
 
 # Functionality 
 * Program compiles and runs on a phone <br/>
-Program must function in Android Studio emulator and on a phone. Upon launching on a phone, the card appears.
-<br />
-* Content does not appear "cut off" <br />
+Program must function in Android Studio emulator and on a phone. Upon launching on a phone, the card appears. <br />
+
+* Content does not appear "cut off"  <br />
 Layout scales responsively for screen sizes in portrait mode, with no part of any images only partially visible. Student is not responsible for responsive design in landscape mode.
 
 # Code Review
 * At least one View Group is included <br />
-XML must include a Relative Layout, Linear Layout, or Constraint Layout.
-<br />
+XML must include a Relative Layout, Linear Layout, or Constraint Layout. <br />
+
 * View Groups contain at least one image view and at least one text view <br />
 Must have one or more image views or text views.
  
