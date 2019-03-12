@@ -1,23 +1,40 @@
 # CoffeeOrderingApp
 
-Coffee Ordering app made with Android Studio.Made for Udacity Google's android basics nanodegree.
+Tour Guide app made with Android Studio. Made for Udacity Google's android basics nanodegree.
 
-*Used language: Java*
+* Used language: Java*
 
-# Deployment
-Download or Clone this file, choose your device and run it.
+## Layout
 
-# Built With
-*Android Studio - IDE for Android Development.
+* Overall Layout <br />
+App contains at least 4 lists of relevant attractions for a location.
 
-# Acknowledgments
+* Navigation <br />
+User navigates between lists in Fragments using either a Navigation Drawer or a ViewPager plus TabLayout.
 
-*It's single-page application so it's a great exercise for begginner coders.
+* List Item Contents <br />
 
-*Positioning and desigining layouts. <br />
-*Increament and decreament methods. <br />
-*Check Box practice <br />
-*Navigation to Google Maps <br />
-*Order summary <br />
-*Auto-directing your summary to gmail. <br />
-*Multiple intent used. <br />
+Each list item contains information about an event, restaurant, historical site, or similar.
+
+##Functionality
+
+* Location Object <br />
+App contains a custom object for storing location information.
+
+* Custom Adapter <br />
+App uses a custom adapter to populate the layout with views based on instances of the custom class.
+
+* String Storage <br />
+All strings are stored in the strings.xml resource file.
+
+* Image Storage <br />
+All images are stored as drawables.
+All drawables are stored at multiple densities.
+
+
+## Deployment
+* Download or Clone this file, choose your device and run it.
+
+## Built With
+* Android Studio - IDE for Android Development.
+
