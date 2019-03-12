@@ -1,9 +1,10 @@
 # AndroidQuizApp
 
 Basic quiz app made for Udacity Google's android basics nanodegree. <br />
+<br />
 *Coding Language: Java*
 
-# Layout
+## Layout
 * Overall Layout <br />
 App contains 4 - 10 questions, including at least one check box, one radio button, and one text entry.
 
@@ -19,7 +20,7 @@ The app includes at least four of the following Views: TextView, ImageView, Butt
 * Rotation
 The app gracefully handles displaying all the content on screen when rotated. Either by updating the layout, adding a scrollable feature or some other mechanism that adheres to Android development guidelines.
 
-# Functionality
+## Functionality
 * Runtime Errors <br />
 The code runs without errors.
 
