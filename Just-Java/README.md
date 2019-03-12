@@ -4,7 +4,7 @@ Coffee Ordering app made with Android Studio. Made for Udacity Google's android 
 <br />
 * Used language: Java*
 
-# Content Review
+## Content Review
 Design includes all specified business criteria <br />
 
 * Business name
@@ -15,21 +15,21 @@ Design includes all specified business criteria <br />
 * Description of business
 * Hours of operation
 
-# Functionality 
+## Functionality 
 * Program compiles and runs on a phone <br/>
 Program must function in Android Studio emulator and on a phone. Upon launching on a phone, the card appears. <br />
 
 * Content does not appear "cut off"  <br />
 Layout scales responsively for screen sizes in portrait mode, with no part of any images only partially visible. Student is not responsible for responsive design in landscape mode.
 
-# Code Review
+## Code Review
 * At least one View Group is included <br />
 XML must include a Relative Layout, Linear Layout, or Constraint Layout. <br />
 
 * View Groups contain at least one image view and at least one text view <br />
 Must have one or more image views or text views.
  
-# Deployment
+## Deployment
 Download or Clone this file, choose your device and run it.
 
 # Built With
