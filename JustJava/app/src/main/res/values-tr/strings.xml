@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Just Java</string>
+    <string name="toppings">Ekstralar</string>
+    <string name="thank_you">Teşekkürler !</string>
+    <string name="name">isim</string>
+    <string name="Quantity">"Adet: "</string>
+    <string name="Wipped_Cream">Krema</string>
+    <string name="Chocolate">Çikolata</string>
+    <string name="Order_SUMMARY">Sipariş Özeti</string>
+    <string name="Order">Sipariş Et</string>
+    <string name="Add_whipped_cream">Krema ekle </string>
+    <string name="Add_choclate">Çikolata ekle</string>
+    <string name="Quantityy">Adet:</string>
+    <string name="order_summary_name">İsim:</string>
+    <string name="Total">Toplam TL:</string>
+</resources>
