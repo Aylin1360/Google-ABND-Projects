@@ -1,0 +1,81 @@
+<resources>
+    <!-- Title for the application. [CHAR LIMIT=12] -->
+    <string name="app_name">StepIstanbul</string>
+
+    <!-- Category name for phrases [CHAR LIMIT=20] -->
+    <string name="category_restaurants">Eat</string>
+
+    <!-- Category name for the vocabulplacesords for colors [CHAR LIMIT=20] -->
+    <string name="category_historical">Visit</string>
+
+    <!-- Category name for the vocabulplacesords for numbers [CHAR LIMIT=20] -->
+    <string name="category_hotels">Stay</string>
+
+    <!-- Category name for the vocabulplacesords for family members [CHAR LIMIT=20] -->
+    <string name="category_wheretogo">Fun</string>
+
+    <string name="open">Open</string>
+    <string name="close">Close</string>
+    <string name="user">Aylin Görgün</string>
+    <string name="usermail">aylingrgn2@gmail.com</string>
+
+    <string name="drawer1">Historical Places</string>
+    <string name="drawer2">Hotels</string>
+    <string name="drawer3">Restaurants</string>
+    <string name="drawer4">Where To Go</string>
+    <string name="drawer5">Logout</string>
+
+    <string name="login">LOGIN</string>
+
+    <string name="HP1">Sultanahmet</string>
+    <string name="HP2">Sultanahmet</string>
+    <string name="HP3">Sultanahmet</string>
+    <string name="HP4">Sultanahmet</string>
+    <string name="HP5">Taksim</string>
+
+    <string name="hp1">Sultanahmet Camii</string>
+    <string name="hp2">Ayasofya</string>
+    <string name="hp3">Topkapı Sarayı</string>
+    <string name="hp4">Yerebatan Sarnıcı</string>
+    <string name="hp5">İstiklal Caddesi</string>
+
+    <string name="H1">Taksim</string>
+    <string name="H2">Taksim</string>
+    <string name="H3">Taksim</string>
+    <string name="H4">Beşiktaş</string>
+    <string name="H5">Beşiktaş</string>
+
+    <string name="h1">Hilton</string>
+    <string name="h2">The Marmara</string>
+    <string name="h3">Intercontinental</string>
+    <string name="h4">Four Seasons</string>
+    <string name="h5">Çırağan Palace</string>
+
+    <string name="R1">Ortaköy</string>
+    <string name="R2">Ortaköy</string>
+    <string name="R3">Beşiktaş</string>
+    <string name="R4">Kadıköy</string>
+    <string name="R5">Beşiktaş</string>
+
+    <string name="r1">Sortie</string>
+    <string name="r2">Fahham</string>
+    <string name="r3">Rock n Rolla</string>
+    <string name="r4">WalterS Coffeee</string>
+    <string name="r5">MendelS</string>
+
+    <string name="W1">Taksim</string>
+    <string name="W2">Levent</string>
+    <string name="W3">Taksim</string>
+    <string name="W4">Ortaköy</string>
+    <string name="W5">Üsküdar</string>
+
+    <string name="w1">Takim Square</string>
+    <string name="w2">Saphirre Terrace</string>
+    <string name="w3">Galata Tower</string>
+    <string name="w4">Bosphorus</string>
+    <string name="w5">Kız Kulesi</string>
+
+    <string name="place">Blue Mosq</string>
+    <string name="location">Sultanahmet</string>
+
+</resources>
