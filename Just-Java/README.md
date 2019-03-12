@@ -12,7 +12,7 @@ Download or Clone this file, choose your device and run it.
 
 # Acknowledgments
 
-*It's single-page application so it's a great egzersize for begginner coders.
+*It's single-page application so it's a great exercise for begginner coders.
 
 *Positioning and desigining layouts. <br />
 *Increament and decreament methods. <br />
