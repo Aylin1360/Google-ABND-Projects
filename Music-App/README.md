@@ -22,12 +22,12 @@ The app contains multiple activities, each labelled, which together make a cohes
 * Labelling <br />
 Features in the app are clearly defined either by labelling or images. For example, a button to play music could use a universally recognized triangular "Play" symbol or could have the text label "Play".
 
-*Buttons <br />
+* Buttons <br />
 Each activity contains button(s) which link it to other activities a user should be able to reach from that activity. For instance, a ‘Library’ activity might contain a button to move to the ‘Now Playing’ activity.
 
 ## Functionality
 
-*Runtime Errors <br />
+* Runtime Errors <br />
 The code runs without errors.
 
 * OnClickListeners <br />
@@ -50,5 +50,5 @@ If images are included (e.g. Album Art), they are stored as drawables. All drawa
 ## Deployment
 Download or Clone this file, choose your device and run it.
 
-## Built With
-*Android Studio - IDE for Android Development.
+# Built With
+* Android Studio - IDE for Android Development.
