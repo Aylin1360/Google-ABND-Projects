@@ -1,9 +1,24 @@
 # NewsApp
 
-This app fetching data from Guardian and gives you an option about sorting.Made for Google's android basics nanodegree.
+This app fetching data from Guardian and gives you an option about sorting. Made for Google's android basics nanodegree.
 
 ## Deployment
 Download or Clone this repo, choose your device and run it.
+
+## Functionality
+
+* Settings Activity <br /> 
+Settings Activity is accessed from the Main Activity via a Navigation Drawer or from the toolbar menu.
+
+* API Query <br />
+App queries the content.guardianapis.com API to fetch news stories related to the topic chosen by the user, using either the ‘test’ api key or the student’s key. <br />
+The query is narrowed down by the preferences selected by the user in the Settings.
+
+* Use of Loaders <br />
+Networking operations are done using a Loader rather than an AsyncTask.
+
+* External Libraries and Packages <br />
+The intent of this project is to give you practice writing raw Java code using the necessary classes provided by the Android framework; therefore, the use of external libraries for the core functionality will not be permitted to complete this project.
 
 ## Built With
 * Android Studio - Android Development IDE.
