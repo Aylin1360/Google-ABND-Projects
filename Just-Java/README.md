@@ -2,7 +2,7 @@
 
 Coffee Ordering app made with Android Studio. Made for Udacity Google's android basics nanodegree.<br />
 <br />
-*Used language: Java*
+* Used language: Java*
 
 # Content Review
 Design includes all specified business criteria <br />
@@ -33,7 +33,7 @@ Must have one or more image views or text views.
 Download or Clone this file, choose your device and run it.
 
 # Built With
-*Android Studio - IDE for Android Development.
+* Android Studio - IDE for Android Development.
 
 # Acknowledgments
 
