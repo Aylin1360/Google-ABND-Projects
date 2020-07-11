@@ -1,4 +1,4 @@
-# AndroidQuizApp
+# Quiz App
 
 Basic quiz app made for Udacity Google's android basics nanodegree. <br />
 <br />
@@ -54,3 +54,7 @@ Download or clone this project, choose your device and run it.
 * Toast messages. <br />
 * Score keeping <br />
 * Arrays <br />
+
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/34216243/87229883-9a641000-c3b4-11ea-96f2-d1efeb273298.gif">
+</p>
