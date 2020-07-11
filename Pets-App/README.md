@@ -1,5 +1,5 @@
-# PetsApp
-It helps you with keeping track of shelter animals.Database project.Made for Google's android basics nanodegree.
+# Pets App
+It helps you with keeping track of shelter animals. Made for Google's android basics nanodegree.
 
 ## Deployment
 Download or Clone this repo, choose your device and run it.
@@ -15,3 +15,7 @@ Download or Clone this repo, choose your device and run it.
 * Presenting information from files and SQLite databases to users
 * Updating information based on user input
 * Creating intents to other apps using stored information
+
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/34216243/87229650-97682000-c3b2-11ea-8669-ad03687e5906.gif">
+</p>
