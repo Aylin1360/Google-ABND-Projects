@@ -1,4 +1,4 @@
-# NewsApp
+# News App
 
 This app fetching data from Guardian and gives you an option about sorting. Made for Google's android basics nanodegree.
 
@@ -35,3 +35,7 @@ The intent of this project is to give you practice writing raw Java code using t
 * Launch a Settings Activity from a menu in the Main Activity
 * Use Uri.Builder class to add query parameters to the URL
 * Update and display the Preference Summary
+
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/34216243/87229603-0c872580-c3b2-11ea-82db-ee7b3236e48f.gif">
+</p>
